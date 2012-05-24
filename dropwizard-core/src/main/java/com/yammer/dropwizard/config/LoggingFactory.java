@@ -103,7 +103,7 @@ public class LoggingFactory {
 
         final LevelChangePropagator levelChangePropagator = new LevelChangePropagator();
         levelChangePropagator.setResetJUL(true);
-
+        levelChangePropagator.setContext(root.getLoggerContext());
         root.getLoggerContext().addListener(levelChangePropagator);
 
         root.setLevel(config.getLevel());
