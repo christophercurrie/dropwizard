@@ -41,7 +41,7 @@ import javax.validation.ValidatorFactory;
  *
  * @param <T> the configuration type
  */
-public class Bootstrap<T extends Configuration> {
+public class Bootstrap<T extends Configuration> extends BootstrapBase<T> {
     private final Application<T> application;
     private final ObjectMapper objectMapper;
     private final List<Bundle> bundles;

@@ -26,7 +26,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * A Dropwizard application's environment.
  */
-public class Environment {
+public class Environment extends EnvironmentBase {
     private final String name;
     private final MetricRegistry metricRegistry;
     private final HealthCheckRegistry healthCheckRegistry;

@@ -5,6 +5,7 @@ import io.dropwizard.cli.Cli;
 import io.dropwizard.cli.ServerCommand;
 import io.dropwizard.logging.LoggingFactory;
 import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.BootstrapBase;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.util.Generics;
 import io.dropwizard.util.JarLocation;
@@ -14,30 +15,7 @@ import io.dropwizard.util.JarLocation;
  *
  * @param <T> the type of configuration class for this application
  */
-public abstract class Application<T extends Configuration> {
-    static {
-        // make sure spinning up Hibernate Validator doesn't yell at us
-        LoggingFactory.bootstrap();
-    }
-
-    /**
-     * Returns the {@link Class} of the configuration class type parameter.
-     *
-     * @return the configuration class
-     * @see Generics#getTypeParameter(Class, Class)
-     */
-    public final Class<T> getConfigurationClass() {
-        return Generics.getTypeParameter(getClass(), Configuration.class);
-    }
-
-    /**
-     * Returns the name of the application.
-     *
-     * @return the application's name
-     */
-    public String getName() {
-        return getClass().getSimpleName();
-    }
+public abstract class Application<T extends Configuration> extends ApplicationBase<T> {
 
     /**
      * Initializes the application bootstrap.

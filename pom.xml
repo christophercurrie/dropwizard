@@ -47,6 +47,7 @@
         <module>dropwizard-assets</module>
         <module>dropwizard-spdy</module>
         <module>dropwizard-benchmarks</module>
+        <module>dropwizard-cli</module>
     </modules>
 
     <properties>

@@ -58,7 +58,7 @@ import javax.validation.constraints.NotNull;
  *
  * @see <a href="http://www.yaml.org/YAML_for_ruby.html">YAML Cookbook</a>
  */
-public class Configuration {
+public class Configuration extends ConfigurationBase {
     @Valid
     @NotNull
     private ServerFactory server = new DefaultServerFactory();
